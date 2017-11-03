@@ -97,6 +97,7 @@
     "mysql2": "^1.4.2",
     "react": "16.0.0",
     "react-dom": "16.0.0",
+    "react-highcharts": "^13.0.0",
     "react-redux": "^4.0.0",
     "react-router-dom": "^4.1.1",
     "redux": "^3.0.4",

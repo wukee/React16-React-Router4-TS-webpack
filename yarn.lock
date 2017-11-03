@@ -3284,6 +3284,10 @@ he@1.1.x:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/he/download/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
+highcharts@^5.0.0:
+  version "5.0.14"
+  resolved "http://registry.npm.taobao.org/highcharts/download/highcharts-5.0.14.tgz#0ef14cca9f1345408568b533dae1478950d96810"
+
 history@^4.7.2:
   version "4.7.2"
   resolved "http://registry.npm.taobao.org/history/download/history-4.7.2.tgz#22b5c7f31633c5b8021c7f4a8a954ac139ee8d5b"
@@ -6104,6 +6108,12 @@ react-dom@16.0.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+react-highcharts@^13.0.0:
+  version "13.0.0"
+  resolved "http://registry.npm.taobao.org/react-highcharts/download/react-highcharts-13.0.0.tgz#141dbae29722f1dfa357f9ef927a94145675a11b"
+  dependencies:
+    highcharts "^5.0.0"
 
 react-hot-loader@^3.0.0-beta.6:
   version "3.1.1"

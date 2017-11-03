@@ -1,0 +1,41 @@
+.div1{
+  width: 60px;
+  display: inline-block;
+  position: relative;
+  margin-left: 10px;
+}
+h3{
+  text-align: center;
+  position: relative;
+  top: 20px;
+  font-weight: bold;
+
+}
+.button{
+  width: 60px;
+  height: 60px;
+  border-radius:60px;
+  border: none;
+  outline: none;
+  color: #576362;
+  font: 18px/1em 'Droid Sans', sans-serif;
+  font-weight:bold;
+  background: linear-gradient(to top, #26e932 10%, #86c783 100%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 6px 0px, rgba(0,0,0,0.3) 0 10px 3px;
+
+}
+
+.button:active{
+  position: relative;
+  top:5px;
+  color: #b4b4b2;
+  background: linear-gradient(to bottom, #ef3638 10%, #d79490 100%);
+  box-shadow: #8b8b89 0px 3px 0px, rgba(0,0,0,0.2) 0 6px 3px;
+}
+.button-actived{
+  position: relative;
+  top:5px;
+  color: #b4b4b2;
+  background: linear-gradient(to bottom, #ef3638 10%, #d79490 100%);
+  box-shadow: #8b8b89 0px 3px 0px, rgba(0,0,0,0.2) 0 6px 3px;
+}

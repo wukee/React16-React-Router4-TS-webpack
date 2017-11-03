@@ -7,16 +7,27 @@
  * @内容 作用
  * @内容 作用
  */
+
+
 'use strict'
 import React, {PureComponent} from 'react'
-
+import ButtonComponent from "../../component/ButtonComponent/button";
 import './content.scss'
 import {Card,Row,Col,Select,Icon} from 'antd'
 const Option = Select.Option;
 import CardIconSun from '../../component/CardIconComponent/CardIconSun'
 import CardIconNight from '../../component/CardIconComponent/CardIconNight'
 import CardIconRainy from '../../component/CardIconComponent/CardRainyIcon'
-const ReactHighcharts = require('react-highcharts');
+import  ReactHighcharts from 'react-highcharts';
+import {ButtonProps} from "antd/es/button/button";
+
+// function titleMaker(title){
+//     return  title.map((item,index)=>{
+//         return (
+//
+//         )
+//     })
+// }
 class ContentContainer extends PureComponent<any,any> {
     static displayName = 'ContentContainer';
 
@@ -24,11 +35,10 @@ class ContentContainer extends PureComponent<any,any> {
         super(props);
         console.log('ContentContainer ' + 'constructor' + arguments);
         this.state={
-            month:1
+            month:1,
+            actived:false
         }
     }
-
-
     render() {
         const config1 ={
             chart: {
@@ -279,6 +289,7 @@ class ContentContainer extends PureComponent<any,any> {
             }]
         }
         let _=this;
+
         return (
             <div className="nfe-container">
                  <div className="nfe-container-header">
@@ -306,34 +317,44 @@ class ContentContainer extends PureComponent<any,any> {
                      </Row>
                  </div>
                  <div className="nfe-container-content">
-                     <Row>
-                         <Col span={9} offset={2}>
-                     <Card title={<CardIconSun></CardIconSun>} extra={<div><Select size="large" defaultValue="2" style={{ width: 50 }} onChange={(val)=>{
-                     _.setState({
-                         month:val
-                     })
-                     }
-                     }>
-                         <Option value={0}>1</Option>
-                         <Option value={1}>2</Option>
-                         <Option value={2}>3</Option>
-                     </Select>月份用电量分布</div>} >
-                         <ReactHighcharts config = {configArr[this.state.month]}></ReactHighcharts>
-                     </Card>
-                         </Col>
-                         <Col span={9} offset={2}>
-                     <Card title={<CardIconNight></CardIconNight>} >
-                         <ReactHighcharts config = {lineconfig}></ReactHighcharts>
-                     </Card>
-                         </Col>
-                     </Row>
-                 <Row>
-                     <Col span={20} offset={2}>
-                         <Card title={<CardIconRainy></CardIconRainy>}>
-                         <ReactHighcharts config = {dconfing}></ReactHighcharts>
-                     </Card>
-                     </Col>
-                 </Row>
+                     {/*<Row>*/}
+                         {/*<Col span={9} offset={2}>*/}
+                     {/*<Card title={<CardIconSun></CardIconSun>} extra={<div><Select size="large" defaultValue="2" style={{ width: 50 }} onChange={(val)=>{*/}
+                     {/*_.setState({*/}
+                         {/*month:val*/}
+                     {/*})*/}
+                     {/*}*/}
+                     {/*}>*/}
+                         {/*<Option value={0}>1</Option>*/}
+                         {/*<Option value={1}>2</Option>*/}
+                         {/*<Option value={2}>3</Option>*/}
+                     {/*</Select>月份用电量分布</div>} >*/}
+                         {/*<ReactHighcharts config = {configArr[this.state.month]}></ReactHighcharts>*/}
+                     {/*</Card>*/}
+                         {/*</Col>*/}
+                         {/*<Col span={9} offset={2}>*/}
+                     {/*<Card title={<CardIconNight></CardIconNight>} >*/}
+                         {/*<ReactHighcharts config = {lineconfig}></ReactHighcharts>*/}
+                     {/*</Card>*/}
+                         {/*</Col>*/}
+                     {/*</Row>*/}
+                 {/*<Row>*/}
+                     {/*<Col span={20} offset={2}>*/}
+                         {/*<Card title={<CardIconRainy></CardIconRainy>}>*/}
+                         {/*<ReactHighcharts config = {dconfing}></ReactHighcharts>*/}
+                     {/*</Card>*/}
+                     {/*</Col>*/}
+                 {/*</Row>*/}
+
+                 <ButtonComponent />
+
+
+                 <ButtonComponent/>
+
+                 <ButtonComponent/>
+
+
+
                  </div>
             </div>
         )
