@@ -71,7 +71,7 @@ var baseConfig = {
             //     loader: "source-map-loader"
             // },
             {
-            test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
+            test: /\.(obj|eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
             loader: 'url-loader?limit=1&name=/assets/imgs/[name].[ext]'
         }
         ]
@@ -212,7 +212,7 @@ const DEV_Config=merge(baseConfig, {
                     }
                 ]
             },{
-                test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
+                test: /\.(obj|eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
                 loader: 'url-loader?limit=1&name=assets/imgs/[name].[ext]'
             }
         ]

@@ -15,22 +15,20 @@ import ButtonComponent from "../../component/ButtonComponent/button";
 import './content.scss'
 import {Card,Row,Col,Select,Icon} from 'antd'
 const Option = Select.Option;
+import obj from '../../asset/imgs/hu.obj'
 import CardIconSun from '../../component/CardIconComponent/CardIconSun'
 import CardIconNight from '../../component/CardIconComponent/CardIconNight'
 import CardIconRainy from '../../component/CardIconComponent/CardRainyIcon'
 import  ReactHighcharts from 'react-highcharts';
 import {ButtonProps} from "antd/es/button/button";
-
-// function titleMaker(title){
-//     return  title.map((item,index)=>{
-//         return (
-//
-//         )
-//     })
-// }
+import Comments from "../../component/ButtonComponent/Practice";
+import Clock from "../../component/ButtonComponent/PracticeClock";
+import {render} from "react-dom";
+import { Scene, Engine } from 'babylonjs';
+import * as BABYLON from 'babylonjs';
 class ContentContainer extends PureComponent<any,any> {
     static displayName = 'ContentContainer';
-
+    canvas:any;
     constructor(props) {
         super(props);
         console.log('ContentContainer ' + 'constructor' + arguments);
@@ -38,6 +36,118 @@ class ContentContainer extends PureComponent<any,any> {
             month:1,
             actived:false
         }
+    }
+    componentDidMount(){
+
+        var engine = new BABYLON.Engine(this.canvas, true);
+        var scene = new BABYLON.Scene(engine);
+
+        //3D球体
+        // Add a camera to the scene and attach it to the canvas
+        var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 3, Math.PI / 3, 20, BABYLON.Vector3.Zero(), scene);
+        // camera.setPosition(new BABYLON.Vector3(-0.5,0,0));
+        camera.attachControl(this.canvas, true);
+
+        scene.ambientColor = new BABYLON.Color3(1, 1, 1);
+
+        // Add lights to the scene
+
+        // var light1 = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(1, 1, 0), scene);
+        var light1 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 10, 0), scene);
+        // light1.diffuse = new BABYLON.Color3(0.8, 0.5, 0.8);
+        // light1.specular = new BABYLON.Color3(0.5, 1, 0);
+        // light1.groundColor = new BABYLON.Color3(0.5, 0, 0.8);
+
+        var redMat = new BABYLON.StandardMaterial("redMat", scene);
+        redMat.ambientColor = new BABYLON.Color3(1, 0, 0);
+        redMat.diffuseColor=new BABYLON.Color3(0,0.3,0.5)
+
+        var greenMat = new BABYLON.StandardMaterial("greenMat",scene);
+        greenMat.ambientColor = new BABYLON.Color3(0,1,0);
+        greenMat.diffuseColor = new BABYLON.Color3(0.3, 0.5, 0.6)
+        //greenMat.wireframe=true; //查看网格
+        // greenMat.emissiveColor=new BABYLON.Color3(0,1,1);
+
+        var yellowMat = new BABYLON.StandardMaterial("redMat", scene);
+        yellowMat.ambientColor = new BABYLON.Color3(1, 0.7, 0);
+        yellowMat.diffuseColor=new BABYLON.Color3(0.8,0,0.4)
+
+        var blueMat = new BABYLON.StandardMaterial("redMat", scene);
+        blueMat.ambientColor = new BABYLON.Color3(0, 0, 1);
+        blueMat.diffuseColor=new BABYLON.Color3(0,0.5,0.8)
+
+        var purpleMat = new BABYLON.StandardMaterial("redMat", scene);
+        purpleMat.ambientColor = new BABYLON.Color3(1, 0, 1);
+        purpleMat.diffuseColor=new BABYLON.Color3(0,1,1)
+
+        var groundColor = new BABYLON.StandardMaterial("redMat", scene);
+        // groundColor.ambientColor = new BABYLON.Color3(0.8, 0.5, 0.8);
+        groundColor.diffuseColor=new BABYLON.Color3(0.8, 0.5, 0.8)
+
+        var sphere0 ;
+        BABYLON.SceneLoader.ImportMesh("batmanface",'/', 'assets/imgs/hu.obj', scene, function (meshes) {
+            sphere0 = meshes;
+            sphere0.position.x=4;
+            sphere0.material=yellowMat;
+        });
+        // var sphere0 = BABYLON.MeshBuilder.CreateSphere("sphere0", {diameter:2,diameterX:2,updatable:true}, scene);
+
+
+        var sphere1 = BABYLON.MeshBuilder.CreateSphere("sphere1", {diameter:2,diameterX:2,updatable:true}, scene);
+        sphere1.material = redMat;
+
+        var sphere2 = BABYLON.MeshBuilder.CreateSphere("sphere2", {diameter:2,diameterX:2,updatable:true}, scene);
+        sphere2.material = blueMat;
+        sphere2.position.x=-4;
+
+        var sphere3 = BABYLON.MeshBuilder.CreateSphere("sphere3", {diameter:2,diameterX:2,updatable:true}, scene);
+        sphere3.material = purpleMat;
+        sphere3.position.y=-3;
+
+        var sphere4 = BABYLON.MeshBuilder.CreateSphere("sphere4", {diameter:2,diameterX:2,updatable:true}, scene);
+        sphere4.material = greenMat;
+        sphere4.position.y=3;
+
+
+
+
+         var myGround = BABYLON.MeshBuilder.CreateGround('myGround',{width: 20, height: 15,subdivisions:10},scene);
+           myGround.position.y=-1;
+           myGround.material = groundColor;
+
+
+        // var columns =  6;  // 6 columns
+        // var rows =  4;  // 4 rows
+        // var faceUV = new Array(6);
+        // for (var i = 0; i < 6; i++) {
+        //     faceUV[i] = new BABYLON.Vector4(i/columns, 0, (i+1)/columns, 1/rows);
+        // }
+        // var options = {
+        //     width: 10,
+        //     height: 3,
+        //     depth: 5,
+        //     faceUV: faceUV
+        // };
+        // var box = BABYLON.MeshBuilder.CreateBox('box', options, scene);
+        //
+        // var mat = new BABYLON.StandardMaterial("mat", scene);
+        // var texture = new BABYLON.Texture("URL of Texture Atlas", scene);
+        // mat.diffuseTexture = texture;
+        // box.material = mat;
+
+        // var myPoints =[
+        //     new BABYLON.Vector3(0, 0, 0),
+        //     new BABYLON.Vector3(0, 1, 1),
+        //     new BABYLON.Vector3(1, 1, 0)
+        // ];
+        // var lines = BABYLON.MeshBuilder.CreateDashedLines("lines", {points: myPoints,updatable:true}, scene);
+        // lines.color = new BABYLON.Color3(1, 0, 0);
+        // scene.ambientColor=new BABYLON.Color3(1,1,1);
+
+
+        engine.runRenderLoop(function () {
+            scene.render();
+        });
     }
     render() {
         const config1 ={
@@ -345,19 +455,21 @@ class ContentContainer extends PureComponent<any,any> {
                      {/*</Card>*/}
                      {/*</Col>*/}
                  {/*</Row>*/}
-
-                 <ButtonComponent />
-
-
-                 <ButtonComponent/>
-
-                 <ButtonComponent/>
-
-
-
-                 </div>
+                 {/*<ButtonComponent/>*/}
+                 {/*<ButtonComponent/>*/}
+                 {/*<ButtonComponent/>*/}
+                     <div className="babylon_content">
+                         <canvas style={{width:'1400px',height:'800px'}} touch-action="none" ref={(item)=>this.canvas=item}></canvas>
+                     </div>
+                     <br/>
+                     <Comments></Comments>
+               </div>
             </div>
         )
     }
 }
 export default ContentContainer;
+
+
+
+

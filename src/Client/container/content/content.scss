@@ -10,10 +10,10 @@
 @import '../../asset/styles/style.scss';
 @import '../../asset/styles/mixins/_shadows';
 .nfe-container{
-  display: flex;
+  display: inline-flex;
   flex: 1;
   .nfe-container-header{
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 60px;
     background-color: $white;
@@ -56,7 +56,4 @@
       }
     }
   }
-}
-.buttonBox{
-
 }

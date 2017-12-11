@@ -1152,6 +1152,12 @@ babylon@^6.18.0:
   version "6.18.0"
   resolved "http://registry.npm.taobao.org/babylon/download/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
 
+babylonjs@^3.1.0-beta5:
+  version "3.1.0-beta5"
+  resolved "http://registry.npm.taobao.org/babylonjs/download/babylonjs-3.1.0-beta5.tgz#6832d21b5c87fd6fae395c53fb97cf358279d874"
+  dependencies:
+    cannon "0.6.2"
+
 backo2@1.0.2:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/backo2/download/backo2-1.0.2.tgz#31ab1ac8b129363463e35b3ebb69f4dfcfba7947"
@@ -1496,6 +1502,10 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
 caniuse-lite@^1.0.30000744:
   version "1.0.30000748"
   resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000748.tgz#44c8d6da52ad65a5d7b9dca4efebd0bdd982ba09"
+
+cannon@0.6.2:
+  version "0.6.2"
+  resolved "http://registry.npm.taobao.org/cannon/download/cannon-0.6.2.tgz#1e7bc72dd5841982f3c104c2bc578bfa4fb1c572"
 
 cardinal@1.0.0:
   version "1.0.0"
