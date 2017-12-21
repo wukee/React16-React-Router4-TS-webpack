@@ -12,6 +12,11 @@
         "allowSyntheticDefaultImports":true,
         "allowJs": true
     },
+    "types": [
+        "babylonjs",
+        "babylonjs-materials",
+        "babylonjs-loaders"
+    ],
     "awesomeTypescriptLoaderOptions": {
         "useWebpackText": true,
         "forkChecker": true

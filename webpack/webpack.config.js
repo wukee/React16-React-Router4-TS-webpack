@@ -71,9 +71,9 @@ var baseConfig = {
             //     loader: "source-map-loader"
             // },
             {
-            test: /\.(obj|eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
-            loader: 'url-loader?limit=1&name=/assets/imgs/[name].[ext]'
-        }
+                test: /\.(obj|babylon|eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
+                loader: 'url-loader?limit=1&name=/assets/imgs/[name].[ext]'
+            }
         ]
     },
     plugins: [
@@ -212,7 +212,7 @@ const DEV_Config=merge(baseConfig, {
                     }
                 ]
             },{
-                test: /\.(obj|eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
+                test: /\.(obj|babylon|eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
                 loader: 'url-loader?limit=1&name=assets/imgs/[name].[ext]'
             }
         ]

@@ -154,11 +154,43 @@ class ContentContainer extends PureComponent<any,any> {
        //  scene.beginAnimation(sphere0, 0, 100, true);
 
 
-        const assetManager = new BABYLON.AssetsManager(scene);
-        const huLoader = assetManager.addMeshTask("huLoaderTask","","/assets/imgs/","hu.babylon");
-        huLoader.onSuccess=function (meshes) {
+        // const assetManager = new BABYLON.AssetsManager(scene);
+        // const huLoader = assetManager.addMeshTask("huLoaderTask","","/assets/imgs/","hu.babylon");
+        // huLoader.onSuccess=function (meshes) {
+        //
+        // }
+        var sphere0 ;
+        const loader = new BABYLON.AssetsManager(scene);
+        console.log(babylon);
+        const myTask=loader.addMeshTask('objload','','/assets/imgs/','hu.babylon');
+        loader.onFinish=()=>{
+            engine.runRenderLoop(function () {
+                scene.render();
+            });
 
         }
+        loader.onTaskErrorObservable.add(function(task) {
+            console.log('task failed', task.errorObject.message, task.errorObject.exception);
+        });
+        myTask.onSuccess= (task: BABYLON.MeshAssetTask) => {
+            sphere0 = task.loadedMeshes[0]; // Property 'loadedMeshes' does not exist on type 'IAssetTask'
+            sphere0.position.x=6;
+            sphere0.scaling.x=.1;
+            sphere0.scaling.y=.1;
+            sphere0.scaling.z=.1;
+            sphere0.isPickable=true;  //是否可被点击
+            sphere0.material = yellowMat;
+            sphere0.actionManager = new BABYLON.ActionManager(scene);
+            sphere0.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickTrigger, function(){
+                window.alert(1)
+                sphere0.puse();
+            }))
+
+        }
+        myTask.onError = function (task, message, exception) {
+            console.log(message, exception);
+        }
+        loader.load()
 
         var sphere1 = BABYLON.MeshBuilder.CreateSphere("sphere1", {diameter:2,diameterX:2,updatable:true}, scene);
             sphere1.material = redMat;
@@ -523,7 +555,7 @@ class ContentContainer extends PureComponent<any,any> {
                          <canvas style={{width:'1400px',height:'800px'}} touch-action="none" ref={(item)=>this.canvas=item}></canvas>
                      </div>
                      <br/>
-                     <Comments></Comments>
+                     {/*<Comments></Comments>*/}
                </div>
             </div>
         )
