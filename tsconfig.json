@@ -13,6 +13,7 @@
         "allowSyntheticDefaultImports":true,
         "allowJs": false
     },
+
     "include": [
         "./src/**/*",
         "./typing/declarations.d.ts"

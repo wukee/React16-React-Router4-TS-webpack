@@ -87,22 +87,6 @@ class ContentContainer extends PureComponent<any,any> {
         // groundColor.ambientColor = new BABYLON.Color3(0.8, 0.5, 0.8);
         groundColor.emissiveColor=new BABYLON.Color3(0.2,0.5,0.2);
 
-        // var loader = new BABYLON.AssetsManager(scene);
-        // var sphere0 = loader.addMeshTask("batman", "", "assets/", "hu.obj");
-        // var sphere0;
-        // const load=new BABYLON.AssetsManager(scene);
-
-        // const loadobj=new Promise(function (resolve,reject) {
-        //     let already:boolean= BABYLON.OBJFileLoader.importMesh("hu", "/assets/imgs","hu.obj",
-        // })
-        // BABYLON.OBJFileLoader.load("batmanface", "/assets/imgs","hu.obj", scene, function (meshes) {
-        //     sphere0=meshes;
-        //     sphere0.position.x=4;
-        //     sphere0.material=yellowMat;
-        //     sphere0.actionManager = new BABYLON.ActionManager(scene);
-        //     sphere0.actionManager.registerAction(new BABYLON.InterpolateValueAction(BABYLON.ActionManager.OnPickTrigger, light1, "diffuse", new BABYLON.Color3(1, 0.7, 0), 1000));
-        //
-        // });
 
        //  var sphere0 = BABYLON.MeshBuilder.CreateSphere("sphere0", {diameter:2,diameterX:2,updatable:true}, scene);
        //      sphere0.position.x=4;
