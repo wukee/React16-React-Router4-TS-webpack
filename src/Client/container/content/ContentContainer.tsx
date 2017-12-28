@@ -532,9 +532,7 @@ class ContentContainer extends PureComponent<any,any> {
                      {/*</Card>*/}
                      {/*</Col>*/}
                  {/*</Row>*/}
-                 {/*<ButtonComponent/>*/}
-                 {/*<ButtonComponent/>*/}
-                 {/*<ButtonComponent/>*/}
+
                      <div className="babylon_content">
                          <canvas style={{width:'1400px',height:'800px'}} touch-action="none" ref={(item)=>this.canvas=item}></canvas>
                      </div>
