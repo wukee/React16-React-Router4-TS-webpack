@@ -1,12 +1,11 @@
 # Project
 #electron git ignore
 /.vscode/
-/.awcache/
+
 /.git/
 /node_modules/
 .DS_Store
 /.idea/*
-/built/*
 /dist/*
 !/dist/electronEntry.js
 !/dist/nwEntry.html

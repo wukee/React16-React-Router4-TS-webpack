@@ -3,7 +3,7 @@
         "outDir": "./built/",
         "sourceMap": true,
         "module": "ES6",
-        "types":["node","babylonjs"],
+
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
