@@ -45,56 +45,56 @@ class SliderComponent extends PureComponent<any,any>{
                         <Menu.Item key="12">Option 12</Menu.Item>
                     </SubMenu>
                 </Menu>
-                {/*<ul className="nav">*/}
-                    {/*<li className="active">*/}
-                        {/*<a href="dashboard.html">*/}
-                            {/*<i className="pe-7s-graph"></i>*/}
-                            {/*<p>Dashboard</p>*/}
-                        {/*</a>*/}
-                    {/*</li>*/}
-                    {/*<li>*/}
-                        {/*<a href="user.html">*/}
-                            {/*<Icon type="link" />*/}
-                            {/*<span>User Profile</span>*/}
-                        {/*</a>*/}
-                    {/*</li>*/}
-                    {/*<li>*/}
-                        {/*<a href="table.html">*/}
-                            {/*<Icon type="link" />*/}
-                            {/*<span>Table List</span>*/}
-                        {/*</a>*/}
-                    {/*</li>*/}
-                    {/*<li>*/}
-                        {/*<a href="typography.html">*/}
-                            {/*<Icon type="link" />*/}
-                            {/*<span>Typography</span>*/}
-                        {/*</a>*/}
-                    {/*</li>*/}
-                    {/*<li>*/}
-                        {/*<a href="icons.html">*/}
-                            {/*<Icon type="link" />*/}
-                            {/*<span>Icons</span>*/}
-                        {/*</a>*/}
-                    {/*</li>*/}
-                    {/*<li>*/}
-                        {/*<a href="maps.html">*/}
-                            {/*<Icon type="link" />*/}
-                            {/*<span>Maps</span>*/}
-                        {/*</a>*/}
-                    {/*</li>*/}
-                    {/*<li>*/}
-                        {/*<a href="notifications.html">*/}
-                            {/*<Icon type="link" />*/}
-                            {/*<span>Notifications</span>*/}
-                        {/*</a>*/}
-                    {/*</li>*/}
-                    {/*<li className="active-pro">*/}
-                        {/*<a href="upgrade.html">*/}
-                            {/*<Icon type="link" />*/}
-                            {/*<span>Upgrade to PRO</span>*/}
-                        {/*</a>*/}
-                    {/*</li>*/}
-                {/*</ul>*/}
+                <ul className="nav">
+                    <li className="active">
+                        <a href="dashboard.html">
+                            <i className="pe-7s-graph"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user.html">
+                            <Icon type="link" />
+                            <span>User Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="table.html">
+                            <Icon type="link" />
+                            <span>Table List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="typography.html">
+                            <Icon type="link" />
+                            <span>Typography</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="icons.html">
+                            <Icon type="link" />
+                            <span>Icons</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="maps.html">
+                            <Icon type="link" />
+                            <span>Maps</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <Icon type="link" />
+                            <span>Notifications</span>
+                        </a>
+                    </li>
+                    <li className="active-pro">
+                        <a href="upgrade.html">
+                            <Icon type="link" />
+                            <span>Upgrade to PRO</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
                 <div className="slider-background"></div>
             </div>

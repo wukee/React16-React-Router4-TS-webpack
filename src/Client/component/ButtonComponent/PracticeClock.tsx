@@ -12,9 +12,8 @@ import * as React from 'react';
 import {PureComponent} from 'react';
 
 interface orderProps {
-
+//TypeScript中的泛型
 }
-
 class Clock extends PureComponent <orderProps, any> {
     constructor(props) {
         super(props);
@@ -26,11 +25,9 @@ class Clock extends PureComponent <orderProps, any> {
             () => this.tick(),
             1000
         )
-
     }
     componentWillUnmount() {
         // clearInterval(this.time)
-
     }
 
     tick() {
@@ -42,8 +39,8 @@ class Clock extends PureComponent <orderProps, any> {
     render() {
         return (
             <div>
-                <h1>Hello, world!</h1>
-                <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+                <h1><strong>Hello,React!</strong></h1>
+                <h2><strong>It is {this.state.date.toLocaleTimeString()}.</strong></h2>
             </div>
         );
     }
