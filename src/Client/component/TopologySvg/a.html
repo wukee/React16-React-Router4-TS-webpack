@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" href="./HoverInfoComp.scss" type="text/css">-->
+    <style>
+        /**{*/
+            /*margin: 0;*/
+            /*padding: 0;*/
+        /*}*/
+        #div1{
+            position: absolute;
+            /*left: 71.5px;*/
+            /*top:289.5px;*/
+            width: 13vw;
+            height: auto;
+            padding: 12px;
+            border-radius: 5px;
+            background-color: rgba(0,0,0,0.3);
+            color: white;
+            font-size: 0.8vw;
+            line-height: 2;
+            display: none;
+        }
+        #div22{
+            /*position: absolute;*/
+            /*left: 750px;*/
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            background-color: #e6ffbc;
+        }
+        #container{
+            /*position: absolute;*/
+            /*left: 300px;*/
+
+            width: 700px;
+            height: 400px;
+            background-color: #d3d3ce;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function () {
+            function svgInfo(id,index) {
+            var oDiv=document.querySelector('#div1 ');
+            var svg = document.getElementById(id);
+
+             svg.onmouseover = function (ev) {
+                var oEvent = ev||event;
+                oDiv.style.left = oEvent.pageX + 'px';
+                oDiv.style.top =oEvent.pageY + 'px';
+                 console.log(oEvent.pageX )
+                 console.log(oEvent.pageY )
+                 document.onmouseover=function () {
+                     oDiv.style.display='block';
+                     document.getElementById('s1').innerText = arr[index-1].ip;
+                     document.getElementById('s2').innerText = arr[index-1].status;
+                     document.getElementById('s3').innerText = arr[index-1].upstream;
+                     document.getElementById('s4').innerText = arr[index-1].downstream;
+                     document.getElementById('s5').innerText = arr[index-1].position;
+                 }
+
+            }
+            document.onmouseout =function () {
+
+                 document.onmouseover=null;
+                oDiv.style.display='none';
+
+            }
+        }
+        arr.map((item,index)=>{
+            svgInfo(`svg_${index+1}`,index+1)
+        })
+    }
+        const arr =[
+            {
+                ip:'port_1',
+                status:"open",
+                upstream:'1M',
+                downstream:'1M',
+                position:'UT-1'
+            },{
+                ip:'port_2',
+                status:"open",
+                upstream:'1M',
+                downstream:'1M',
+                position:'UT-2'
+            },{
+                ip:'port_3',
+                status:"open",
+                upstream:'1M',
+                downstream:'1M',
+                position:'UT-3'
+            },{
+                ip:'port_4',
+                status:"open",
+                upstream:'1M',
+                downstream:'1M',
+                position:'UT-4'
+            },{
+                ip:'port_5',
+                status:"open",
+                upstream:'1M',
+                downstream:'1M',
+                position:'UT-4'
+            },{
+                ip:'port_6',
+                status:"open",
+                upstream:'1M',
+                downstream:'1M',
+                position:'UT-4'
+            },{
+                ip:'port_7',
+                status:"open",
+                upstream:'1M',
+                downstream:'1M',
+                position:'UT-4'
+            },{
+                ip:'port_8',
+                status:"open",
+                upstream:'1M',
+                downstream:'1M',
+                position:'UT-4'
+            }];
+    </script>
+</head>
+<body>
+<div id="div22"></div>
+<div id="container"><div id="div1">
+    ip: <span id="s1"> </span><br>
+    status: <span id="s2"> </span><br>
+    upstream: <span id="s3"> </span><br>
+    downstream: <span id="s4"> </span><br>
+    position: <span id="s5"> </span>
+</div>
+<div style="width: 640px ;height: 480px">
+    <svg   viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+        <image xlink:href="../../asset/imgs/NSS4320-52TF.png" x="0" y="0" width="640" height="480"/>
+        <g id='port_up' stroke-width="0" stroke="red" fill="#fff" fill-opacity='0' >
+            <rect id="svg_2" height="10" width="16" y="289.5" x="33" />
+            <rect id="svg_4" height="10" width="16" y="289.5" x="52.5" />
+            <rect id="svg_6" height="10" width="16" y="289.5" x="71.5"/>
+            <rect id="svg_8" height="10" width="16" y="289.5" x="91"/>
+            <rect id="svg_10" height="10" width="16" y="289.5" x="110"/>
+            <rect id="svg_12" height="10" width="16" y="289.5" x="129.5"/>
+            <rect id="svg_14" height="10" width="16" y="289.5" x="158.661371" />
+            <rect id="svg_16" height="10" width="16" y="289.5" x="178.161371" />
+            <rect id="svg_18" height="10" width="16" y="289.5" x="197.661371"/>
+            <rect id="svg_20" height="10" width="16" y="289.5" x="217.161371"/>
+            <rect id="svg_22" height="10" width="16" y="289.5" x="236.661371"/>
+            <rect id="svg_24" height="10" width="16" y="289.5" x="255.661371" />
+            <rect id="svg_26" height="10" width="16" y="289.5" x="284.994668" />
+            <rect id="svg_28" height="10" width="16" y="289.5" x="304.494683" />
+            <rect id="svg_30" height="10" width="16" y="289.5" x="323.828061" />
+            <rect id="svg_32" height="10" width="16" y="289.5" x="343.494755"/>
+            <rect id="svg_34" height="10" width="16" y="289" x="362.994765" />
+            <rect id="svg_36" height="10" width="16" y="289" x="382.161384" />
+            <rect id="svg_38" height="10" width="16" y="289" x="411.660757" />
+            <rect id="svg_40" height="10" width="16" y="289" x="431.160342" />
+            <rect id="svg_42" height="10" width="16" y="289" x="450.659925" />
+            <rect id="svg_44" height="10" width="16" y="289" x="470.159514" />
+            <rect id="svg_46" height="10" width="16" y="289" x="489.159107" />
+            <rect id="svg_48" height="10" width="16" y="289" x="508.65869" />
+        </g>
+        <g id='port_down' stroke-width="0" stroke="red" fill="#fff" fill-opacity='0'>
+            <rect id="svg_1" height="10" width="16" y="306" x="33.16462" />
+            <rect id="svg_3" height="10" width="16" y="306" x="52.66462" />
+            <rect id="svg_5" height="10" width="16" y="306" x="72.16462" />
+            <rect id="svg_7" height="10" width="16" y="306" x="91.328284" />
+            <rect id="svg_9" height="10" width="16" y="306" x="110.328156" />
+            <rect id="svg_11" height="10" width="16" y="306" x="129.661371" />
+            <rect id="svg_13" height="10" width="16" y="306" x="159" />
+            <rect id="svg_15" height="10" width="16" y="306" x="178.5" />
+            <rect id="svg_17" height="10" width="16" y="306" x="197.5" />
+            <rect id="svg_19" height="10" width="16" y="306" x="217" />
+            <rect id="svg_21" height="10" width="16" y="305.5" x="236.661371"/>
+            <rect id="svg_23" height="10" width="16" y="305.5" x="255.661371" />
+            <rect id="svg_25" height="10" width="16" y="305.5" x="285.494668" />
+            <rect id="svg_27" height="10" width="16" y="305.5" x="304.494683" />
+            <rect id="svg_29" height="10" width="16" y="305.5" x="323.828061"/>
+            <rect id="svg_31" height="10" width="16" y="305.5" x="343.494755" />
+            <rect id="svg_33" height="10" width="16" y="305.5" x="362.994765" />
+            <rect id="svg_35" height="10" width="16" y="305.5" x="382.161384" />
+            <rect id="svg_37" height="10" width="16" y="305.5" x="411.5" />
+            <rect id="svg_39" height="10" width="16" y="305.5" x="431" />
+            <rect id="svg_41" height="10" width="16" y="305.5" x="450.5" />
+            <rect id="svg_43" height="10" width="16" y="305" x="470" />
+            <rect id="svg_45" height="10" width="16" y="305" x="489"/>
+            <rect id="svg_47" height="10" width="16" y="305" x="508.5"/>
+        </g>
+    </svg>
+</div>
+</div>
+
+</body>
+</html>
